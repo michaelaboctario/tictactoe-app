@@ -31,17 +31,18 @@ function Board({ xIsNext, squares, onPlay }) {
   }
 
   const arrindex = [];
-  for(let i=0; i<9; i++)
-    arrindex.push(i);
-  console.log(arrindex);
+  for(let i=0; i<9; i++) {
+    //arrindex.push(i);
+    arrindex[i]=i;
+  }
+  //console.log(arrindex);
 
   const boardsquares = arrindex.map((index) => {
-    const value=squares[index];
     return (
-        <Square key={index} value={value} onSquareClick={() => handleClick(index)} />   
+        <Square key={index} value={squares[index]} onSquareClick={() => handleClick(index)} />   
     )
   })
- // console.log(boardsquares);
+   //console.log(boardsquares);
 
   return (
     <>
@@ -83,7 +84,7 @@ export default function Game() {
     );
   });
 
-  console.log(moves);
+  //console.log(moves);
 
   return (
     <div className="game">
